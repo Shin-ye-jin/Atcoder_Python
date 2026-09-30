@@ -34,7 +34,6 @@ for w in range(temp):
 
     print(f"#{w+1} {result}")
 
-
 # for i in range(n):
 #     count = 1
 #     for j in range(1,n):
