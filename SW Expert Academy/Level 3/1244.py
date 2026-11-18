@@ -11,7 +11,22 @@
 
 n = int(input())
 
+unique_numbers = set() # 빈 셋 생성
+
 number, count = map(int,input().split())
 number_s = list(str(number))
 
-print(number_s)
+n_len = len(number_s)
+for i in range(n_len):
+    for j in range(i+1, n_len):
+        number_s[i], number_s[j] = number_s[j], number_s[i]
+        combined = ''.join(number_s)
+        unique_numbers.add(combined)
+
+        number_s[i], number_s[j] = number_s[j], number_s[i]
+
+print(unique_numbers)
+max_value = max(int(x) for x in unique_numbers)
+print(max_value)
+
+# 교환 횟수 1회일 경우 성공
